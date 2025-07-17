@@ -1,0 +1,62 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.button {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500; /*semibold*/
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    border-radius: 0.8em;
+    cursor: pointer; /*clique efeito*/
+    border: none;
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    color: ghostwhite;
+    overflow: hidden;
+}
+
+.button svg{
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+}
+
+.button span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8em 1.2em 0.8em 1.05em;
+}
+
+.button::before, .button::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;  
+}
+
+.button::before{
+    content: "";
+    background: #000;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+} /*Efeito do botão antes do efeito hover e clique*/
+
+.button:hover::before{
+    transform: translate3d(100%, 0, 0);
+} 
+/*translate3d(100%, 0, 0) move o pseudo-elemento no eixo X (horizontal) para a direita em 100% da sua largura.
+0 no eixo Y e no eixo Z, ou seja, não muda verticalmente nem em profundidade.
+translate3d usa aceleração por hardware, melhor para animações suaves.*/
+
+.button:active{
+    transform: scale(0.95);
+} /*Transformação de escala, reduzindo o botão para 95% do tamanho original*/

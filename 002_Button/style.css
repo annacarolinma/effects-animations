@@ -60,12 +60,16 @@ html, body {
   margin-right: 10px;
   margin-top: 5px;
   font-size: 20px;
+  transition: transform 0.3s ease;
 }
 
 .menu a:hover{
   color: rgba(240, 248, 255, 0.518);
   cursor: pointer;
+  transform: scale(1.1);
 }
+
+
 .menu-right{
   display: flex;
   flex-direction: row;

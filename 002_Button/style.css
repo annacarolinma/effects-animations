@@ -27,7 +27,8 @@ html, body {
   padding: 40px;
   color: #fff;
   margin: 20px;
-  gap:60px
+  gap:60px;
+
 }
 
 .header h1{
@@ -37,11 +38,9 @@ html, body {
 .menu {
   width: 30%;
   height: 55px;
-
   display: flex;
   justify-content: space-around;
   align-items: center;
-  
   /* GLASSMORPHISM */
   background: rgba(255, 255, 255, 0.1);         
   border-radius: 20px;
@@ -49,7 +48,6 @@ html, body {
   -webkit-backdrop-filter: blur(15px);         
   border: 1px solid rgba(255, 255, 255, 0.2);   
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);    
-
   color: white;
   font-weight: 500;
   position: relative;
@@ -64,12 +62,17 @@ html, body {
   font-size: 20px;
 }
 
+.menu a:hover{
+  color: rgba(240, 248, 255, 0.518);
+  cursor: pointer;
+}
 .menu-right{
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-end;
   gap: 10px;
+
 }
 
 .search{
@@ -78,9 +81,8 @@ html, body {
   margin-top: 5px;
   font-size: 20px;
   display: flex;
-  justify-content: flex-end;
+  justify-content:center;
   align-items: center;
-
 }
 
 .search-box {
@@ -92,17 +94,22 @@ html, body {
   background-color: transparent;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-left: 1px;
-  padding: 6px;
-  text-align: center;
-  
+  padding: 5px;
+  gap: 10px;
+  text-align: start;
+}
+
+/* Retira o botão de 'X' do campo de input */
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .search-box input{
   text-align: start;
   all: unset;
   width: 100%;
-  padding: 8px; 
+  padding: 5px; 
   font-size: 18px;
   background:transparent;
   color: white;
